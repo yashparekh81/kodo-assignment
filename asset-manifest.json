@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/kodo-assignment/static/css/main.e6c13ad2.css",
+    "main.js": "/kodo-assignment/static/js/main.3a90f3e4.js",
+    "static/js/453.ac243514.chunk.js": "/kodo-assignment/static/js/453.ac243514.chunk.js",
+    "index.html": "/kodo-assignment/index.html",
+    "main.e6c13ad2.css.map": "/kodo-assignment/static/css/main.e6c13ad2.css.map",
+    "main.3a90f3e4.js.map": "/kodo-assignment/static/js/main.3a90f3e4.js.map",
+    "453.ac243514.chunk.js.map": "/kodo-assignment/static/js/453.ac243514.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.3a90f3e4.js"
+  ]
+}
