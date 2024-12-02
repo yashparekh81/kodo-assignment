@@ -1,58 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { useState } from "react";
+import MovieList from "./components/MovieList";
+import useDebounce from "./utils/hooks/useDebounce";
 
-function App() {
+export default function App() {
+  const [query, setQuery] = useState("");
+  const debouncedSearchTerm = useDebounce(query, 500);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
+    <div>
+      <header className="bg-gray-800 p-4 flex justify-center flex-col gap-6 content-center flex-wrap">
+        <h1 className="text-2xl font-bold text-white text-center">
+          Movie Explorer
+        </h1>
+        <input
+          type="text"
+          value={query}
+          placeholder="Search movies..."
+          onChange={(e) => setQuery(e.target.value)}
+          className="p-2 flex-grow bg-gray-700 rounded text-white md:w-1/2 w-2/3"
+        />
       </header>
+      <MovieList query={debouncedSearchTerm} />
     </div>
   );
 }
-
-export default App;
